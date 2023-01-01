@@ -54,8 +54,8 @@ function App() {
     <div className="App">
       <section className="section-center">
         <h3>tired of boring lorem ipsum?</h3>
-        <form class="lorem-form">
-          <label for="amount">paragraphs:</label>
+        <form className="lorem-form">
+          <label htmlFor="amount">paragraphs:</label>
           <input
             type="number"
             name="amount"
@@ -65,11 +65,10 @@ function App() {
               setParaValue(e.target.value);
             }}
           />
-          <button class="btn">generate</button>
         </form>
-        <article class="lorem-text">
+        <article className="lorem-text">
           {paras.slice(0, paraValue).map((paraObj) => {
-            return <p>{paraObj.content}</p>;
+            return <p key={paraObj.id}>{paraObj.content}</p>;
           })}
         </article>
       </section>
